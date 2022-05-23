@@ -82,8 +82,10 @@ def auto_report(user):
 
     result = s.post(url, data=data, headers=headers,
                     cookies=user['cookies'], verify=False)
-    print(user['name'] + ':' + json.loads(result.text)['m'])
+    print(json.loads(result.text)['m'])
+    from onepush import notify
+    notify('pushplus', token=os.environ['KEY'], title='OnePush', content=json.loads(result.text)['m'])
 
-def main_handler(event, context):
+if __name__ == '__main__':
     for item in users:
         auto_report(item)
