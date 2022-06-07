@@ -8,7 +8,7 @@ url = "https://eai.buct.edu.cn/ncov/wap/default/save"
 users = [
     {
         'cookies': {
-            'eai-sess': os.environ['eai'],
+            'eai-sess': os.environ['EAI'],
             'UUkey': os.environ['UUkey']
         }
     }
@@ -33,10 +33,10 @@ def auto_report(user):
     'sfcxzysx': '0',  # 是否有任何与疫情相关的， 值得注意的情况
     'tw': '1',  # 体温范围（下标从 1 开始），此处是36 - 36.5
 
-    'area': os.environ['area'],  # 所在区域
-    'province': os.environ['province'],  # 所在省
-    'city': os.environ['city'],  # 所在市
-    'address': os.environ['address'],  # 地址
+    'area': os.environ['AREA'],  # 所在区域
+    'province': os.environ['PROVINCE'],  # 所在省
+    'city': os.environ['CITY'],  # 所在市
+    'address': os.environ['ADDRESS'],  # 地址
 
     # 'sfcyglq': '0',  # 是否处于隔离期
     # 'sfyzz': '0',  # 是否有症状
