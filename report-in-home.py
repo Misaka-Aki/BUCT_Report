@@ -86,7 +86,7 @@ def auto_report(user):
                     cookies=user['cookies'], verify=False)
     print(json.loads(result.text)['m'])
     from onepush import notify
-    notify('pushplus', token=os.environ['KEY'], title='OnePush', content=json.loads(result.text)['m'])
+    notify('pushplus', token=os.environ['KEY'], title='打卡已完成', content=json.loads(result.text)['m'])
 
 if __name__ == '__main__':
     for item in users:
