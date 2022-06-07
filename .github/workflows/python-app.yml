@@ -1,4 +1,4 @@
-name: checkout
+name: checkout-school
 on:
   repository_dispatch:
   workflow_dispatch:
