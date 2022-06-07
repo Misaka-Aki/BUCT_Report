@@ -7,7 +7,6 @@ url = "https://eai.buct.edu.cn/ncov/wap/default/save"
 
 users = [
     {
-        'name': os.environ['name'],
         'cookies': {
             'eai-sess': os.environ['eai'],
             'UUkey': os.environ['UUkey']
