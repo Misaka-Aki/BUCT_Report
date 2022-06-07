@@ -9,7 +9,7 @@ users = [
     {
         'cookies': {
             'eai-sess': os.environ['EAI'],
-            'UUkey': os.environ['UUkey']
+            'UUkey': os.environ['UUKEY']
         }
     }
 ]
