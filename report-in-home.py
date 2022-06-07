@@ -81,10 +81,11 @@ def auto_report(user):
             'pois': []
         },
     }
-
     result = s.post(url, data=data, headers=headers,
                     cookies=user['cookies'], verify=False)
     print(json.loads(result.text)['m'])
+    
+    #使用pushplus推送结果
     from onepush import notify
     notify('pushplus', token=os.environ['KEY'], title='打卡已完成', content=json.loads(result.text)['m'])
 
