@@ -4,7 +4,6 @@ import urllib3
 import os
 
 url = "https://eai.buct.edu.cn/ncov/wap/default/save"
-
 users = [
     {
         'cookies': {
