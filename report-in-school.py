@@ -85,9 +85,12 @@ def auto_report(user):
     result = s.post(url, data=data, headers=headers,
                     cookies=user['cookies'], verify=False)
     print(json.loads(result.text)['m'])
-    from onepush import notify
     
-    notify('pushplus', token=os.environ['KEY'], title='OnePush', content='结果：' + json.loads(result.text)['m'])
+    d = datetime.datetime.now()
+    print(d.strftime('%Y-%m-%d %H:%M:%S'))
+    
+    from onepush import notify
+    notify('pushplus', token=os.environ['KEY'], title='OnePush', content=json.loads(result.text)['m'])
 
 if __name__ == '__main__':
     for item in users:
