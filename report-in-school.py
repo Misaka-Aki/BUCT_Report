@@ -87,7 +87,7 @@ def auto_report(user):
     print(json.loads(result.text)['m'])
     from onepush import notify
     
-    notify('pushplus', token=os.environ['KEY'], title='OnePush', content=json.loads(result.text)['m'])
+    notify('pushplus', token=os.environ['KEY'], title='OnePush', content='结果：' + json.loads(result.text)['m'])
 
 if __name__ == '__main__':
     for item in users:
