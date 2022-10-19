@@ -2,7 +2,6 @@ import json
 import requests
 import urllib3
 import os
-import datatime
 
 url = "https://eai.buct.edu.cn/ncov/wap/default/save"
 users = [
