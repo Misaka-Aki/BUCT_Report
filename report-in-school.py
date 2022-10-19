@@ -86,10 +86,10 @@ def auto_report(user):
     result = s.post(url, data=data, headers=headers, cookies=user['cookies'], verify=False)
     print(json.loads(result.text)['m'])
     
-    dateStr = datetime.datetime.now(tz=pytz.timezone('Asia/Shanghai')).strftime("%Y-%m-%d %H:%M:%S")
-    print(dateStr)  # 2021-11-09 14:00:51
+    dateStr = datetime.datetime.now(tz=pytz.timezone('Asia/Shanghai')).strftime("%H:%M:%S")
+    print(dateStr) 
     
-    t = str(json.loads(result.text)['m']) + '\n当前时间：' + str(dateStr)
+    t = '执行结果：' + str(json.loads(result.text)['m']) + '\n当前时间：' + str(dateStr)
     
     from onepush import notify
     notify('pushplus', token=os.environ['KEY'], title='执行结果', content=t)
