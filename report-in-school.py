@@ -89,7 +89,7 @@ def auto_report(user):
     dateStr = datetime.datetime.now(tz=pytz.timezone('Asia/Jakarta')).strftime("%Y-%m-%d %H:%M:%S")
     print(dateStr)  # 2021-11-09 14:00:51
     
-    t = json.loads(result.text) + dateStr
+    t = str(json.loads(result.text)) + str(dateStr)
     
     from onepush import notify
     notify('pushplus', token=os.environ['KEY'], title='执行结果', content=t)
