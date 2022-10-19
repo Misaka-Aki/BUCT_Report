@@ -86,10 +86,11 @@ def auto_report(user):
     
     from datetime import datetime
     import pytz
-    print(datetime.now(tz=pytz.timezone('Asia/Shanghai')))
+    t = datetime.now(tz=pytz.timezone('Asia/Shanghai'))
+    print(t)
     
     from onepush import notify
-    notify('pushplus', token=os.environ['KEY'], title='OnePush', content=datetime.now(tz=pytz.timezone('Asia/Shanghai')) + json.loads(result.text)['m'])
+    notify('pushplus', token=os.environ['KEY'], title='执行结果', content=json.loads(result.text)['m'] + t)
 
 if __name__ == '__main__':
     for item in users:
