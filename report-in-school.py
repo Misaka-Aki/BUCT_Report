@@ -86,6 +86,7 @@ def auto_report(user):
                     cookies=user['cookies'], verify=False)
     print(json.loads(result.text)['m'])
     
+    from datetime import datetime
     d = datetime.datetime.now()
     print(d.strftime('%Y-%m-%d %H:%M:%S'))
     
