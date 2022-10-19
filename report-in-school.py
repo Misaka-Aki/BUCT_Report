@@ -86,11 +86,13 @@ def auto_report(user):
     result = s.post(url, data=data, headers=headers, cookies=user['cookies'], verify=False)
     print(json.loads(result.text)['m'])
     
-    dateStr = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    dateStr = datetime.datetime.now(tz=pytz.timezone('Asia/Jakarta')).strftime("%Y-%m-%d %H:%M:%S")
     print(dateStr)  # 2021-11-09 14:00:51
     
+    t = json.loads(result.text) + dateStr
+    
     from onepush import notify
-    notify('pushplus', token=os.environ['KEY'], title='执行结果', content=json.loads(result.text)['m'])
+    notify('pushplus', token=os.environ['KEY'], title='执行结果', content=t)
 
 if __name__ == '__main__':
     for item in users:
