@@ -2,6 +2,7 @@ import json
 import requests
 import urllib3
 import os
+import time
 
 url = "https://eai.buct.edu.cn/ncov/wap/default/save"
 users = [
@@ -84,13 +85,11 @@ def auto_report(user):
     result = s.post(url, data=data, headers=headers, cookies=user['cookies'], verify=False)
     print(json.loads(result.text)['m'])
     
-    from datetime import datetime
-    import pytz
-    t = datetime.now(tz=pytz.timezone('Asia/Shanghai'))
+    t = time.strftime("%m/%d %H:%M:%S ", time.localtime())
     print(t)
     
     from onepush import notify
-    notify('pushplus', token=os.environ['KEY'], title='执行结果', content=json.loads(result.text)['m'] + t)
+    notify('pushplus', token=os.environ['KEY'], title='执行结果', content=json.loads(result.text)['m'])
 
 if __name__ == '__main__':
     for item in users:
