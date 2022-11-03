@@ -18,3 +18,6 @@ report-in-home.py为放假版，上报家庭位置（需自定义）
 本脚本仅限学习使用，切勿滥用。
 
 ## 已实现结果推送
+
+引入 [ONEPUSH](https://github.com/y1ndan/onepush) 作为结果推送器
+非ACTION环境需自行pip安装
