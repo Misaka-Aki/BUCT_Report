@@ -52,10 +52,10 @@ def auto_report(user):
             'status': 1,
             'Eia': 'jsonp_913580_',
             'position': {
-                'O': 113.0270592,  # 经度
-                'P': 22.5524345,  # 纬度
-                'lng': 113.0270592,  # 经度
-                'lat': 22.5524345  # 纬度
+                'Q': 40.xxxxx,  # 经度
+                'R': 116.xxxxx,  # 纬度
+                'lng': 116.xxxxx,  # 经度
+                'lat': 40.xxxxx  # 纬度
             },
             'message': 'Get+ipLocation+success.Get+address+success.',
             'location_type': 'ip',
